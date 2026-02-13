@@ -1,34 +1,102 @@
-This is a Kotlin Multiplatform project targeting Android, iOS.
 
-* [/composeApp](./composeApp/src) is for code that will be shared across your Compose Multiplatform applications.
-  It contains several subfolders:
-  - [commonMain](./composeApp/src/commonMain/kotlin) is for code that’s common for all targets.
-  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
-    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
-    the [iosMain](./composeApp/src/iosMain/kotlin) folder would be the right place for such calls.
-    Similarly, if you want to edit the Desktop (JVM) specific part, the [jvmMain](./composeApp/src/jvmMain/kotlin)
-    folder is the appropriate location.
+## 🛠️ Stack Tecnológico
 
-* [/iosApp](./iosApp/iosApp) contains iOS applications. Even if you’re sharing your UI with Compose Multiplatform,
-  you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
+### Core del Proyecto
+- **Kotlin Multiplatform**: Desarrollo compartido entre plataformas
+- **Compose Multiplatform**: UI multiplataforma moderna
+- **Gradle Kotlin DSL**: Sistema de compilación configurable
 
-### Build and Run Android Application
+### Dependencias Principales
 
-To build and run the development version of the Android app, use the run configuration from the run widget
-in your IDE’s toolbar or build it directly from the terminal:
-- on macOS/Linux
-  ```shell
-  ./gradlew :composeApp:assembleDebug
-  ```
-- on Windows
-  ```shell
-  .\gradlew.bat :composeApp:assembleDebug
-  ```
+#### UI & Composición
+- `Compose Runtime` - Framework reactivo
+- `Compose Foundation` - Componentes base
+- `Compose Material 3` - Diseño Material
+- `Compose UI` - Elementos UI fundamentales
+- `Compose Material Icons Extended` - Iconografía
 
-### Build and Run iOS Application
+#### Networking
+- **Ktor Client** - Cliente HTTP multiplataforma
+  - `ktor-client-core` - Núcleo del cliente
+  - `ktor-client-okhttp` - Engine para Android
+  - `ktor-client-darwin` - Engine nativo para iOS
+  - `ktor-client-negotiation` - Negociación de contenido
 
-To build and run the development version of the iOS app, use the run configuration from the run widget
-in your IDE’s toolbar or open the [/iosApp](./iosApp) directory in Xcode and run it from there.
+#### Inyección de Dependencias
+- **Koin** - DI ligero y flexible
+  - `koin-core` - Core framework
+  - `koin-compose` - Integración con Compose
+  - `koin-android` - Bindings para Android
+  - `koin-androidx-compose` - Integración con AndroidX
+
+#### Serialización
+- **Kotlinx Serialization** - Serialización JSON type-safe
+
+#### Cargar Imágenes
+- **Coil** - Carga eficiente de imágenes
+  - `coil-compose` - Integración con Compose
+  - `coil-network-ktor` - Transport con Ktor
+
+#### Navegación
+- **AndroidX Navigation Compose** - Navegación multiplataforma
+
+#### Otros
+- `androidx-lifecycle-viewmodel-compose` - ViewModel con Compose
+- `androidx-lifecycle-runtime-compose` - Runtime lifecycle
+- `androidx-activity-compose` - Actividades con Compose
+
+## 📱 Plataformas Soportadas
+
+### Android
+- **Min SDK**: Configurable (versión definida en `gradle.properties`)
+- **Target SDK**: Última versión estable
+- **Compilación**: JVM 11
+- **Namespace**: `com.kmpcourse.itunessearchapi`
+
+### iOS
+- **Targets**: 
+  - ARM64 (dispositivos reales)
+  - Simulator ARM64 (simuladores M1/M2)
+- **Framework**: `ComposeApp` (binario estático)
+- **Integración**: Soporte nativo con SwiftUI
+
+## 🚀 Características Principales
+
+✅ **Búsqueda de iTunes**: Consulta el API de iTunes para buscar canciones, apps y más  
+✅ **Interfaz Multiplataforma**: Una sola codebase para Android e iOS  
+✅ **Inyección de Dependencias**: Arquitectura limpia con Koin  
+✅ **Networking Robusto**: Cliente HTTP con Ktor  
+✅ **Carga de Imágenes Eficiente**: Coil con soporte de red  
+✅ **Navegación Moderna**: Compose Navigation para flujos de usuario  
+✅ **Material Design 3**: Diseño contemporáneo y consistente  
+
+## ⚙️ Configuración de Compilación
+
+### Gradle Properties
+- **Java Compiler**: Compatible con JVM 11
+- **Memoria JVM**: Gradle con 4GB, Kotlin daemon con 3GB
+- **Features**: 
+  - Caché de configuración habilitada
+  - Caché de compilación habilitada
+  - AndroidX no transitivo para classes
+
+### Repositorios
+- Google (Maven)
+- Maven Central
+- Gradle Plugin Portal
+
+## 📦 Versión Actual
+- **Versión**: 1.0
+- **Version Code**: 1
+- **ID de Aplicación**: `com.kmpcourse.itunessearchapi`
+
+## 🎯 Caso de Uso
+
+Este proyecto es ideal para:
+- Aprender **Kotlin Multiplatform Development**
+- Desarrollar aplicaciones que consulten APIs REST
+- Implementar patrones de arquitectura moderna
+- Reutilizar código entre plataformas móviles
 
 ---
 
